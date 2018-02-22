@@ -1,0 +1,10 @@
+What is polymorphism?
+    A: Polymorphism means a object can be many form. Subclasses can have their own unique methods and share
+    some same functions with superclass. Subclasses can override the a method from superclass, like print() exists in
+    superclass, when a subclass object is in the form of superclass and call the print(), it will call the method which
+    overridden by the subclass.
+Explain where polymorphism is used in your code in this assignment.
+    A: In ComputerComponent, there is an ArrayList<Computer> computers. When generate different computers objects,
+    they are all in the form of Computer, so I can collect them in the computers arrayList. When I draw the computers,
+    all the computers in the list call draw() method, but it will automatically find what subclass it is and invoke
+    the draw() method from the subclass.

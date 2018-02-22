@@ -1,0 +1,77 @@
+no
+
+add
+piano
+Yamaha
+GC2 SH
+32559
+
+
+comment
+a sitar with lots of blanks before, in between and after the brand
+add
+  sitar
+  Maharaja     Musicals
+194
+        1105.72
+
+add
+Purple Sandalwood Erhu Instrument Chinese Voilin Fiddle
+Wan's
+concert level
+ 000397.0000000
+
+ total
+
+comment
+the model is left as empty because we don't have that info
+add
+tabla
+Lali     & Sons
+
+390.2799999
+
+comment
+the model is left as empty because we don't have that info
+add
+tabla set
+Lali     & Sons
+
+555
+
+add
+piano
+Steinway & Sons
+Model B "Music Room Grand"
+68000
+
+print
+
+remove
+p102
+
+total
+
+count
+PIANO
+
+print
+
+add
+flute
+Gemeinhardt
+38
+1000
+
+discount
+50
+
+discount
+50
+
+price
+f106
+
+print
+
+quit

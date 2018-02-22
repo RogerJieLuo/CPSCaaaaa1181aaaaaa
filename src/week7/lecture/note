@@ -1,0 +1,21 @@
+Event-driven programming uses a signal-and-response approach to programming
+    The event determines the order in which things happen in your program.
+    An event is an object that acts as a signal to another object known as a Listener.
+    add an event listener object to the appropriate event sources.
+
+    we code the listener, but don't call the listener, we call the component
+    component -------> (action event)event object -----> listener (event handler processes the event) EVENT HANDLER OBJECT
+    clicking a button with a mouse creates an object called an event and sends the event object to another object(s)
+        called the listener(s). The listener does something
+    1) define the methods that will be called when the event is sent to the listener
+    2) register the listener with certain component will act to the event
+        a button fires action events which are handled by action listeners.
+    3)
+
+    every listener will implements an interface actionlisterner, it only has one abstract method,
+        actionPerformed(ActionEvent e)
+
+    There are different types of listeners that respect to different goal.
+
+
+    The listener class can be inner class inside another class. The inner class compiled at runtime.

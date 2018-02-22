@@ -1,0 +1,73 @@
+no
+
+add
+flute
+Brand A
+Model A
+12000
+
+comment
+test erhu with lots of white space
+add
+       erhu
+      Brand B
+     Model B
+         200.000000
+
+add
+piano
+Brand C
+Model C
+25000
+
+total
+
+comment
+test empty model
+add
+flute
+Brand A2
+
+1000
+
+print
+
+add
+flute
+Brand  A3
+Model        A3
+1500
+
+print
+
+remove
+f103
+
+print
+
+total
+
+add
+flute
+Brand A4
+Model A4
+20000
+
+discount
+50
+
+discount
+20
+
+price
+f105
+
+print
+
+add
+piano
+brand
+model
+10000.00000
+
+quit

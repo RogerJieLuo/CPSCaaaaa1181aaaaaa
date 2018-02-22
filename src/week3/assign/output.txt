@@ -1,0 +1,181 @@
+-> Is the session interactive? type "yes": no
+no
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: flute
+flute
+-> Enter the brand: Brand A
+Brand A
+-> Enter the model: Model A
+Model A
+-> Enter the msrp in dollars: 12000
+12000
+-> The instrument added:
+	item id: f100
+	type: "flute"
+	brand-model: "Brand A : Model A"
+	price: $12000.00
+----------------------------------------------------------------------
+-> Enter a command: comment
+comment
+test erhu with lots of white space
+test erhu with ots of white space
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type:        erhu
+       erhu
+-> Enter the brand:       Brand B
+      Brand B
+-> Enter the model:      Model B
+     Model B
+-> Enter the msrp in dollars:          200.000000
+         200.000000
+-> The instrument added:
+	item id: e101
+	type: "erhu"
+	brand-model: "Brand B : Model B"
+	price: $200.00
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: piano
+piano
+-> Enter the brand: Brand C
+Brand C
+-> Enter the model: Model C
+Model C
+-> Enter the msrp in dollars: 25000
+25000
+-> The instrument added:
+	item id: p102
+	type: "piano"
+	brand-model: "Brand C : Model C"
+	price: $25000.00
+----------------------------------------------------------------------
+-> Enter a command: total
+total
+-> The total number of instruments in the store is 3
+----------------------------------------------------------------------
+-> Enter a command: comment
+comment
+test empty model
+test empty model
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: flute
+flute
+-> Enter the brand: Brand A2
+Brand A2
+-> Enter the model:
+
+-> Enter the msrp in dollars: 1000
+1000
+-> The instrument added:
+	item id: f103
+	type: "flute"
+	brand-model: "Brand A2"
+	price: $1000.00
+----------------------------------------------------------------------
+-> Enter a command: print
+print
+-> [(f100, flute, Brand A : Model A, 12000.00), (e101, erhu, Brand B : Model B, 200.00), (p102, piano, Brand C : Model C, 25000.00), (f103, flute, Brand A2, 1000.00)]
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: flute
+flute
+-> Enter the brand: Brand  A3
+Brand A3
+-> Enter the model: Model        A3
+Model        A3
+-> Enter the msrp in dollars: 1500
+1500
+-> The instrument added:
+	item id: f104
+	type: "flute"
+	brand-model: "Brand A3 : Model A3"
+	price: $1500.00
+----------------------------------------------------------------------
+-> Enter a command: print
+print
+-> [(f100, flute, Brand A : Model A, 12000.00), (e101, erhu, Brand B : Model B, 200.00), (p102, piano, Brand C : Model C, 25000.00), (f103, flute, Brand A2, 1000.00), (f104, flute, Brand A3 : Model A3, 1500.00)]
+----------------------------------------------------------------------
+-> Enter a command: remove
+remove
+-> Enter the item id: f103
+f103
+-> The instrument removed:
+	item id: f103
+	type: "flute"
+	brand-model: "Brand A2"
+	price: $1000.00
+----------------------------------------------------------------------
+-> Enter a command: print
+print
+-> [(f100, flute, Brand A : Model A, 12000.00), (e101, erhu, Brand B : Model B, 200.00), (p102, piano, Brand C : Model C, 25000.00), (f104, flute, Brand A3 : Model A3, 1500.00)]
+----------------------------------------------------------------------
+-> Enter a command: total
+total
+-> The total number of instruments in the store is 4
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: flute
+flute
+-> Enter the brand: Brand A4
+Brand A4
+-> Enter the model: Model A4
+Model A4
+-> Enter the msrp in dollars: 20000
+20000
+-> The instrument added:
+	item id: f105
+	type: "flute"
+	brand-model: "Brand A4 : Model A4"
+	price: $20000.00
+----------------------------------------------------------------------
+-> Enter a command: discount
+discount
+-> Enter the discount percentage (0 <= percentage <= 100): 50
+50
+-> Added a discount of 50.0% to the whole store
+----------------------------------------------------------------------
+-> Enter a command: discount
+discount
+-> Enter the discount percentage (0 <= percentage <= 100): 20
+20
+-> Added a discount of 20.0% to the whole store
+----------------------------------------------------------------------
+-> Enter a command: price
+price
+-> Enter the item id: f105
+f105
+-> The flute with id f105 costs 8000.00
+----------------------------------------------------------------------
+-> Enter a command: print
+print
+-> [(f100, flute, Brand A : Model A, 4800.00), (e101, erhu, Brand B : Model B, 80.00),
+(p102, piano, Brand C : Model C, 10000.00), (f104, flute, Brand A3 : Model A3, 600.00),
+(f105, flute, Brand A4 : Model A4, 8000.00)]
+----------------------------------------------------------------------
+-> Enter a command: add
+add
+-> Enter the type: piano
+piano
+-> Enter the brand: brand
+brand
+-> Enter the model: model
+model
+-> Enter the msrp in dollars: 10000.00000
+10000.00000
+-> The instrument added:
+	item id: p106
+	type: "piano"
+	brand-model: "brand : model"
+	price: $8000.00
+----------------------------------------------------------------------
+-> Enter a command: quit
+quit
