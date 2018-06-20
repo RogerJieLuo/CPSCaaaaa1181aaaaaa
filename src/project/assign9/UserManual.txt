@@ -1,0 +1,45 @@
+run ClientAndServer twice so that there are 2 clients to simulate the game, let's call p1 and p2
+
+The board will initiate with 4 stones.
+
+p1: select "ASSIGN" action, and put the 1 in the X text field, leave Y text field empty, click "execute" button,
+    which will assign the BLACK color to p1
+p2: select "ASSIGN" action, and put the -1 in the X text field, leave Y text field empty, click "execute" button,
+    which will assign the WHITE color to p1
+
+p1: select "TURN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, it's p1's turn
+p2: select "TURN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, p2's waiting
+
+p1: p1 click on the board to get the x y value which displayed on the console.
+    Select "DRAWBLACK" action, enter the value to X Y text field respectively, click "execute" button
+p2: select "DRAWBLACK" action, enter the value to X Y text field respectively, click "execute" button
+    p2 can not click on the board because it's not p2's turn
+
+(For testing, please let p1 plays at 3,5, then you can see the white stones at 3,4 is changed to black,
+that's how this game works)
+
+p1: select "TURN" action, put -1 in the X text field, leave Y text field empty, click "execute" button, p1's waiting
+p2: select "TURN" action, put -1 in the X text field, leave Y text field empty, click "execute" button, it's p2's turn
+
+p2: p1 click on the board to get the x y value which displayed on the console.
+    Select "DRAWWHITE" action, enter the value to X Y text field respectively, click "execute" button
+p1: select "DRAWWHITE" action, enter the value to X Y text field respectively, click "execute" button
+    p2 can not click on the board because it's not p1's turn
+
+(For testing, p2 plays at 2,3, then the black stone at 3,3 will be changed to white)
+
+Then each players takes turn to play.
+
+If the move is not valid, which means the move is either not changed opponent's color or the cell is occupied by a stone
+already, then the current player needs to pick another one.
+
+p1: select "WIN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, which will set p1
+     as winner
+p2: select "WIN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, which will set p2
+     lost the game
+
+
+p1: select "RESIGN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, which will set
+    p1 lost the game because resigning game
+p2: select "RESIGN" action, put 1 in the X text field, leave Y text field empty, click "execute" button, which will set
+    p2 win the game because another player resign.

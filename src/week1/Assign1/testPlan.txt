@@ -1,0 +1,19 @@
+input           reason              expected            actual
+----------------------------------------------------------------------
+                empty string        warning msg         warning msg
+10              one num             warning msg         warning msg
+ , 20           1st empty num       warning msg         warning msg
+10,             2nd empty num       warning msg         warning msg
+a, 10           1st is not a num    warning msg         warning msg
+10, a           2nd is not a num    warning msg         warning msg
+-10, 10         1st is negative     warning msg         warning msg
+10, -10         2nd is negative     warning msg         warning msg
+0, 10           1st is 0            warning msg         warning msg
+10, 0           2nd is 0            -100.00%            -100.00%
+10, 20          two numbers         100.00%             100.00%
+10, 10          result 0%           0.00%               0.00%
+20, 10          negative result     -50.00%             -50.00%
+1.5, 3          fraction number     100.00%             100.00%
+.5, 1           dot plus num format 100.00%             100.00%
+. , 1           dot                 warning msg         warning msg
+CANCEL          Cancel button       repeat asking       repeat asking

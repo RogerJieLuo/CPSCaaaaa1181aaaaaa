@@ -1,0 +1,10 @@
+server                                      client
+
+new server socket                           new socket(host and port)
+server.accept       <--connection request--
+                    <-- IO stream -->
+
+
+
+server only has one serverSocket
+

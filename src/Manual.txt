@@ -1,0 +1,31 @@
+User manual
+
+Running command:
+
+    Open server by running the ReversiServer file.
+
+    Then run Client File. You can run this file many times. There is no limit number on the client side.
+
+
+Game process:
+
+    In the login window, input a name, click "Enter room", you will connect to the game server. The login window
+    close and open the game window. If there is no game currently playing by 2 players, then you can click "new
+    game" to be ready to play and wait for another player be ready. If there are already 2 players playing
+    game, you can only watch them play. After one game ends, you can click "new game" be ready.
+
+    If there are 2 players in the game, the system will assign a color, either BLACK or WHITE to the 2 players, and
+    initiate 4 stones on board, 2 BLACK and 2 WHITE. If you are assigned BLACK, you play first, if not, you have to
+    wait for your opponent play first.
+
+    Each turn, the player can only play one valid move. The valid move mean the stone you played must at least
+    change one stone of the opponent's to be your color.
+
+    If there is no possible valid move for the next player, the system will just keep the current player in turn to
+    play.
+
+    If there is no valid move for both player or the 64 cells on board are all filled with stones, then the game
+    ends, which color occupies more cells wins the game.
+
+    After game end, all the attendants in the room can click "new game" to apply to play the game. First click,
+    first serves.

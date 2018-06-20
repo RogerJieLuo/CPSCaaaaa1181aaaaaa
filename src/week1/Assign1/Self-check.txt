@@ -1,0 +1,54 @@
+A) Self Check Question 4 on page 136
+    A: the "static" Identify the property double CM_PER_INCH is static and all the instance will share the same CM_PER_INCH.
+    the "final" indicates the CM_PER_INCH can not be changed.
+
+B) Self Check Question 9 on page 141
+    A: the value of 1729 / 100 is a 17 or 17.29, depends on what type of value it assigned to.
+    the value of 1729 % 100 is 29.
+
+C) Self Check Question 10 on page 141
+    A: ( n / 10 ) % 10 will get the digit of the last second position, if n is 123, the equation will get 2.
+
+D) Self Check Question 13 on page 149
+    A: in.nextInt() will return an Integer type. It needs to cast to Double
+
+E) Self Check Question 15 on page 149
+    A: "The volume is    10"
+
+F) Self Check Question 16 on page 149
+    A:
+    System.out.printf("Bottles: %8d\n", 8);
+    System.out.printf("Cans:    %8d", 24);
+
+G) Self Check Question 23 on page 159
+    A: str.substring(8);
+
+H) Self Check Question 34 on page 211
+    A:
+    if( x == 0 || y == 0 )
+    {
+        // code block
+    }
+
+I) Self Check Question 35 on page 272
+    A: int index = str.lastIndexOf(' ');
+
+J) Can you copy code from the Internet, change the variable names, the indentation and include it
+in your program and claim it as your assignment? Why yes or why not?
+    A: No, if it's copied from Internet and not claim the resource, it's a cheat.
+
+K) What should you do if you miss a lecture?
+    A: Check the checklist, read the textbook and ask classmates if there is any important note.
+
+L) How (or where) should you pose general questions on the assignement or midterm?
+    A: ask in class.
+
+M) True or false?
+You are allowed to do more than what the assignment requires as long as the specifications of
+the assignments are fully satisfied.
+    A: True
+
+N) True or false?
+You are not allowed to use constructors not yet taught in the course e.g. exceptions for this first
+assignment.
+    A: True

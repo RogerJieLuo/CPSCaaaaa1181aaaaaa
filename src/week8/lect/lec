@@ -1,0 +1,34 @@
+Exception:
+    why do we need an exception: we want to fix them gracefully.
+
+    after try catch block, the execution will continue unless :
+        - there is a system.exit()
+        - or a return in the catch block
+        - or if the exception is not caught in the catch blocks
+        - or the catch block throws an exception
+    statement in the try block are executed if there is no exception occurs
+        - the catch clauses are skipped
+        - the finally block is executed if there is one finally block
+        - the code after the catch block (and possibly a finally block)
+          then executed
+    if an exception occurs:
+        - execution jumps to the catch clause matching the type
+          (only objects of a subclass Throwable can be thrown)
+        - if there is no match, the exception is thrown up (goes to the calling
+          method)
+        - finally block is executed if there is one
+        - if the "method up" cannot handle the exception, the exception is thrown
+        up further (possibly executing finally blocks if in a try catch)
+        and if none catches it, it goes up and "crashes"
+
+
+
+try-catch-resource
+    the resource close automatically an object of a class that has a certain behaviour that
+    implements the AutoClosable interface
+
+    File iFile = new FIle("input.txt");
+    tyr(Scanner in = new Scanner(iFile))
+    {
+
+    }

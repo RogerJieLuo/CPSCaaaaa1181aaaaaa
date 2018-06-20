@@ -1,0 +1,45 @@
+add components to containers
+use layout manager to place the components
+JFrame uses Flow layout by default (fill the right space then flow down)
+
+component default is 0 x 0, need to put setPreferredSize() in the components class
+
+swingset
+
+
+class 2
+user interface:
+    design: what do you want to display, layout, group
+    action on the button
+
+lambda
+    if the java interface has exactly one abstract method (like ActionLisener, Comparable, Runnable), then it's called
+    functionalInterface because it does one function.
+    Lambda expression defines "the parameters and return value of a method in a compact notation"
+    so we say lambda expression can be used to specify the one single abstract function of the java interface
+    a lambda expression must be assigned to a functional interface variable.
+
+    example
+
+1) In a class that implements the functional interface, the single abstract method is defined by the lambda expression.
+2) an object of that class is created( the object is actually created)
+3) the reference of that created object is assigned to the variable
+
+general syntax:
+    (type paramA, type paramB) -> expression
+    (type paramA, type paramB) -> {statements; }
+    the data type could be inferred by the compiler
+        e -> { statements;}
+
+    ArguementList -> statements body
+    (int x, int y) -> x + y;
+    () -> 2018
+    (string s) -> { sout(s);}
+
+
+
+Exception when implement Interface
+    override method can not throw exception if it doesn't throw in the parent class
+    if parent doesn't throw exception, the child can not throw exception,( method() throws exception). Child can handle
+        exception inside, but not throw out.
+    if parent does throw exception, child may or may not throw exception.

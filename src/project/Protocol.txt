@@ -1,0 +1,75 @@
+Game: Black-White
+
+Description:
+    Black-White is a board game with 10 x 10 board for two players.
+    Game starts with 2 black and 2 white stones at the center and same color is not next
+    to each other. Players take turn to play. When the stone is played on the board, any opponent's stone that
+    is in straight line and between the new played stone and closest another current player's stone will be changed
+    to the current user's color.
+    Each movement players make must be valid which is able to change at least one of opponent's stone color.
+    After all the cell in the board is filled, or there is no more valid movement, then game stops and start
+    counting. The player with more stone wins. If two players have the same amount of stones, it's a tie. If one player
+    resigns, another player wins.
+    one room can contains many players, but only the first 2 players are playing on the board, others will be the
+    attendant and view only.
+
+
+session:
+    pl1    ---- ENTERROOM [pl1] ----> server
+    server ---- ENTERROOM [pl1] ----> pl1
+    pl2    ---- ENTERROOM [pl2] ----> server
+    server ---- ENTERROOM [pl2] ----> pl1, pl2
+    pl3    ---- ENTERROOM [pl3] ----> server
+    server ---- ENTERROOM [pl3] ----> pl1, pl2, pl3
+
+    server ---- ASSIGN [BLACK] ----> pl1
+    server ---- ASSIGN [WHITE] ----> pl2
+    server ---- TURN [PL1] -----> pl1 and pl2
+    pl1    ---- PLAYBLACK [5,6] ----> server
+    server ---- PLAYBLACK [5,6] & REVERSETOBLACK [5,5] ----> pl1, pl2
+    server ---- TURN PL2 -----> pl1, pl2
+    pl2    ---- PLAYWHITE [8,8] ----> server
+    server ---- PLAYWHITE [INVALID] ----> pl2
+    pl2    ---- PLAYWHITE [6,6] -----> server
+    server ---- PLAYWHITE [6,6] -----> pl1, pl2
+    server ---- REVERSETOWHITE [5,5] -----> pl1, pl2
+    server ---- TURN [PL1] -----> pl1, pl2
+    ...
+    ppl3   ---- QUIT ----> server
+    server ---- QUIT [PPL3]----> pl1, pl2
+    ...
+    pl2    ---- PLAYWHITE[1,1] ----> server
+    server ---- PLAYWHITE[1,1] & REVERSETOWHITE [x,y] ----> pl1, pl2
+    server ---- PL2 WIN ----> pl1, pl2
+
+    pl1    ---- RESIGN ----> server
+    server ---- RESIGN [PL1] & WIN [PL2] ----> pl1, pl2
+    pl1    ---- QUIT ----> server
+    server ---- QUIT [PL1] ----> pl2
+
+
+Session:
+    client: pl1 entering room
+    server: pl1 entered room
+    client: pl2 entering room
+    server: pl2 entered room
+    client: pl3 enter room
+    server: pl3 entered room
+
+    server: assign black to pl1
+    client: you are black
+    server: assign white to pl2
+    client: you are white
+    server: it's pl1's turn
+    client: it's your turn
+    client: play [5,6]
+    server: pl1 play [5,6] & reverse [5,5]
+    client: pl1 play [5,6] & reverse [5,5]
+    server: it's pl2's turn
+    client: it's your turn
+    client: play [8,8]
+    server: pl2 play [8,8]
+    server: invalid move, choose another move
+    client: your move is not valid, choose another move
+    client: play [6,6]
+    server: pl2

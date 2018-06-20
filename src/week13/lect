@@ -1,0 +1,84 @@
+wed:
+ch 22.3
+    DepositRunnable.run(), the run() will goes sequentially.
+
+deposit.start();
+withdraw.start();
+
+they run in parallel, but it could cause the balance below 0.
+This is RACE condition, when shared data in multithreads
+
+method deposit(){
+    while(busy){
+        try{
+            Thread.sleep(1);
+        }catch (Exception e){
+
+        }
+    }
+
+    double x = balance + amt;
+    balance = x;
+    busy = false;
+}
+
+method withdraw(double amt){
+    while(busy)
+        continue;
+    busy = true;
+    double y = balance - amt;
+    try{
+        Thread.sleep(3);
+    }catch(Exception e){
+
+    }
+}
+
+This doesn't work
+
+a lock object controls thread that manipulated shared objects
+
+a condition object allows a thread to release a lock temporarily and later the lock can be regained
+each condition belongs to a specific lock.
+
+BankAccount{
+    private double balance;
+    private Lock balLock;
+    private Condition sufficientMoney;
+
+    public BankAccount(){
+        balance = 0;
+        balLock = new ReentrantLock();
+        sufficientMoney = balLock.newCondition();
+
+    }
+
+    deposit(){
+        balLock.lock();
+        try{    // critical section
+            double x = balance + amt;
+            balance = x;
+            sufficientMoney.signalAll();    // let everyone know that let lock go
+        }catch(){
+
+        }finally{
+            balLock.unlock();   // guarantees that the lock is released
+        }
+    }
+
+    withdraw(){
+        balLock.lock();
+        try{
+            while(balance <= amt)
+                sufficientMoney.await();
+                continue;
+            balance = balance - amt;
+
+        }
+        finally{
+            balLock.unlock();
+        }
+    }
+}
+
+dead lock when it's lock in the withdraw , but balance is 0, it's an infinite loop.

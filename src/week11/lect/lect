@@ -1,0 +1,130 @@
+review of protocol:
+    server ---- youare player 1 ----> pl1
+    server ---- youare player 2 ----> pl2
+    server ---- pl1's turn -----> pl1 and pl2
+    p1 ---- play position 6 ----> server
+    server ---- play position 6 ----> pl1, pl2
+    server ---- pl2's turn -----> pl1, pl2
+    pl2 ---- play position 4 -----> server
+    server ----- play position 4 -----> pl1, pl2
+    server ----- pl1's turn -----> pl1, pl2
+
+
+multi-threading
+Threads -- ch 22
+    a thread is the flow of execution of a task:
+        a thread provide the mechanism needed for running this task
+    multithreading allows for tasks to be running independently of each other "at the same time".
+    java lets you launch multiple threads from a program concurrently.
+    multiple threads on multiple cpus
+        cpu1 therad1 for a certain amount of time
+        cpu2 thread2 for a certain amount of time
+        cpu3 thread3 for ...
+
+        multiple threads sharing a single cpu(time sharing)
+        thread1 - //////// ------------- ///// -----
+        thread2 ---------- ////// ------------------
+        thread3 ----------------- ////// -----------
+
+        the JVM executes each thread in the program for a time slice or quantum
+
+    though cpu is shared, threads give the impression of parallel execution.
+
+    in java, each task is an instance of the Runnable interface
+
+    Implement a task class that implements the Runnable interface
+    create an object/instance of your class, eg 'MyThread' inside of your say Clinet
+    a task is run/executed in a thread
+
+extends Thread
+implements Runnable
+
+In thread API
+    start(), we don't know which one thread will start first
+
+// in a run(), create a thread inside which prints 'c' 40 times, I can use t40.join() to make sure
+the 'c' print out "if(i == 50) t40.join();"
+
+Thread.currentThread().getName(); // get the thread name
+
+
+
+
+Lect2
+
+Thread t0 = new Thread(new MessageLoop());
+join()
+interrupt()
+
+if you have to create many short-lived threads, use a pool of threads  because it's more efficient
+in java,
+    ExecutorService executor = Executors.newFixedThreadPool(3);
+    executor.execute(new PrintChar('a', 100));
+    executor.execute(new PrintChar('n', 100));
+    executor.execute(new PrintNum(1, 100));
+    executor.shutdown();
+3 threads to execute tasks
+
+
+(not need in the assignment)
+The swing GUI event handling code has its own thread called the event dispatch thread.
+    invokeLater
+    invokeAndWait
+
+
+
+NetProgramming
+diff btw IP and domain name
+Why not use TCP in some place
+
+final int HTTP_PORT = 80;
+Socket s = new Socket("WWW.SFU.CA", HTTP_PORT);
+
+Scanner in = new Scanner(instream);
+PrintWriter out = new PrintWriter(outstream);
+
+out.print(command);
+out.flush(); // flush the buffer manually
+
+DataInputStream
+DataOutputStream
+
+InputStream and outputStream send binary data
+
+BankServer
+    main(){
+        Bank bank = new bank(10);
+        ServerSocket serverSocket = new ServerSocket(PORT); // only one server, so only one server socket
+
+        while(true){
+            Socket socket = serverSocket.accept();
+            BankService service = new BankService(socket, bank);
+
+            // create new thread to hold the service, so other service wouldn't be held by the first one
+            new Thread(service).start();
+            // sockets are not closed, it's sloppy.
+        }
+    }
+
+BankService implements Runnable
+
+    public bankService( Socket s, Bank bank){
+
+    }
+    run(){
+
+    }
+
+    executeCOmmand(String command){
+        if(command.equals("QUIT"))
+        do something
+
+EXAMPLE ON THE BOOk
+
+
+
+
+
+
+
+

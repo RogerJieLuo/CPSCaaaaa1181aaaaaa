@@ -1,0 +1,19 @@
+#22 on page 48
+
+#28 and #29 on page 51
+    "HELLO"
+    "Hello"
+
+    mutator
+
+#7 on page 90
+    there is nothing would display, because withdraw doesn't return anything.
+
+#12 on page 95
+    balance is private attribute, not able to access it directly
+
+#15 on page 101
+
+#24 and #26 on page 109
+
+#18, #19 on page 393

@@ -1,0 +1,24 @@
+protocol:
+    server              player A            player B
+    YOUARE A
+    TURN A              TURN A              TURN A
+    SHOW card 0         try card 0
+    SHOW card 5         try card 5
+    WAIT                CARD 0, 5
+
+
+
+    youare B
+    turn A
+
+
+    session:
+
+
+GUI
+
+
+
+Complete programming
+
+bonus part: cite ie. (sounds code source)
