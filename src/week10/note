@@ -1,0 +1,52 @@
+Stream
+    2 ways to store data
+        text format
+        binary format
+    text format: human readable
+    binary: data represented in bytes
+        use inputStream, outputStream
+        byte is a singed data type, first bit is used as sign
+
+    random access vs sequential access
+        file pointer
+        RandomAccessFile f = new RandomAccessFile("bank.dat","rw");
+        f.seek(n);
+        long n = f.getFilePointer();
+        long fileLength = f.length(); // get the number of bytes of the file
+        double x = file.readDouble();
+        f.writeDouble(x);
+
+    advantage/disadvantage for storing numbers in binary
+        fixed amount of storage space, can read without affecting other numbers
+        hard to read the binary file
+
+    objectoutputstream
+    objectinputstream
+        try(ObjectOuputStream out = new ObjectOutputStream(new FileOutputStream(f))){
+            out.writeObject(bank);
+        }
+        // store paused game data, and read when resume
+
+    object that are written to an object stream must belong to a class that implements Serializable
+    eac obj is assigned a serial number
+
+
+    readers writers if processing text
+    use stream if processing byte data
+    use object stream for objects(do implements serializable class)
+
+
+?: why binary file:
+    fixed size
+
+ ?: what if the output file is the same as input file
+try(
+    FilReader reader = new FileReader(inputFileName);
+    FileWriter writer = new FileWriter(outputFileName)
+    )
+{
+
+}catch(){
+
+}
+finally{}
